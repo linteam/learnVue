@@ -6,9 +6,15 @@ var app = new Vue({
     product: "Socks",
     image: "./1_assets/vmSocks-green-onWhite.jpg",
     link: "http://www.linspark.com",
-    inStock: true,
-    onSale: true
     //inventory: 100 //envanter demek
+    inStock: true,
+    onSale: true,
+    details: ["80% cotton", "20% polyester", "Gender-neutral"],
+    variants: [
+      { variantId: 2234, variantColor: "green" },
+      { variantId: 2235, variantColor: "blue" }
+    ],
+    sizes: ["sm", "m", "lg", "xl", "xxl"]
   }
 });
 //console'da app.product = "Coats" desek html hemen degisir.
