@@ -5,7 +5,10 @@ var app = new Vue({
   data: {
     product: "Socks",
     image: "./1_assets/vmSocks-green-onWhite.jpg",
-    link: "http://www.linspark.com"
+    link: "http://www.linspark.com",
+    inStock: true,
+    onSale: true
+    //inventory: 100 //envanter demek
   }
 });
 //console'da app.product = "Coats" desek html hemen degisir.
