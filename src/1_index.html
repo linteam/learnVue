@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Product App</title>    
+    <title>Product App</title>   
+    <link rel="stylesheet" href="./1_assets/style.css">
 </head>
 <body>
 
+    <div class="nav-bar">
+
+    </div>
     <div id="app">
-        <h1>{{product}}</h1>
-        <h2>I love my {{product}}</h2>
+        <div class="product">
+            <div class="product-image">
+                <!--v-bind dynamically binds an attribute to an expression-->
+                <!-- v-bind: yerine sadece : kullanarak bind edebilirsin -->
+                <!-- :alt="description", :href="url" , :title: -->
+                <a :href="link"><img v-bind:src="image"></a>
+            </div>
+            <div class="product-info">
+                <h1>{{product}}</h1>
+            </div>
+        </div>
     </div>
     
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script>
-    //Div id'si olan app'i el olarak veriyorum Vue sinifina
-    //Bu instance uygulamanin kalbidir.
-    var app = new Vue({el: '#app', data: {product : 'Cats'}});
-    //console'da app.product = "Coats" desek html hemen degisir.
-    
-</script>
+<script src="./1_assets/main.js"></script>
