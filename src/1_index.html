@@ -21,7 +21,8 @@
                 <a :href="link"><img v-bind:src="image"></a>
             </div>
             <div class="product-info">
-                <h1>{{product}}</h1>
+                <!-- <h1>{{brand}} {{product}}</h1> -->
+                <h1> {{title}} </h1>
                 <!-- <p v-if="inventory > 10">In Stock</p>
                 <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
                 <p v-else>Out of Stock</p> -->
@@ -34,8 +35,8 @@
                     <li v-for="detail in details">{{detail}}</li>
                 </ul>
 
-                <div v-for="variant in variants" :key="variant.variantId" class="color-box"
-                :style="{backgroundColor: variant.variantColor}" @mouseover="setImage(variant.variantImage)">
+                <div v-for="(variant, index) in variants" :key="variant.variantId" class="color-box"
+                :style="{backgroundColor: variant.variantColor}" @mouseover="setVariant(index)">
                     <!-- :style="{fontSize: fontSize}" dedigimde sagdaki fontSize data'dan gelir -->
                     <!-- :style="{'font-size': fontSize}" olarak da yazabilirsin -->
                     <!-- :style="styleObject" data:{styleObject:{color: 'red'}}-->
