@@ -16,10 +16,10 @@
         <!-- Component isimleri kucuk harflerden olusmali? -->
         <componentsample message="Hello"></componentsample>
         <div class="cart">
-            <p>Cart({{cart}})</p>
+            <p>Cart({{cart.length}})</p>
         </div>
-        <product :premium = "premium"></product>
-        <product></product>
+        <product :premium = "premium" @add-to-cart="updateCart"></product>
+        <product @add-to-cart="updateCart"></product>
     </div>
     
 </body>

@@ -99,7 +99,9 @@ Vue.component("product", {
   },
   methods: {
     addToCart() {
-      this.cart++; //data icindeki verilere ulasmak icin this keyword'unu kullaniyoruz
+      //this.cart++; //data icindeki verilere ulasmak icin this keyword'unu kullaniyoruz
+      //Yukari ile iletisim kurmak icin bir event olustururuz.
+      this.$emit("add-to-cart", this.variants[this.selectedVariant].variantId); //emit add-to-cart event
     },
     setVariant(index) {
       console.log(index);

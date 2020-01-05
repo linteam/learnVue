@@ -4,7 +4,12 @@ var app = new Vue({
   el: "#app",
   data: {
     premium: true,
-    cart: 0
+    cart: []
+  },
+  methods: {
+    updateCart(id) {
+      this.cart.push(id);
+    }
   }
 });
 //console'da app.product = "Coats" desek html hemen degisir.
