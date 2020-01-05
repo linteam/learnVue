@@ -1,4 +1,8 @@
 //import ProductDetails from "./ProductDetails.js";
+//@review-submitted="addReview" kaldirdik bunu
+//Product -> ProductTabs -> ProductReview torundan dedeye veri gondermek icin globale geceriz
+var eventBus = new Vue();
+//Isler buyudugunde ise Vuex state management yapisini kullanmalisin.
 
 Vue.component("product", {
   props: {
@@ -53,20 +57,8 @@ Vue.component("product", {
             :disabled="!inStock"
             :class="{ disabledButton: !inStock}">Add to Cart</button>
             
-            <div>
-              <h2>Reviews</h2>
-              <p v-if="!reviews.length">There are no reviews yet.</p>
-              <ul>
-                <li v-for="review in reviews">
-                  <p>{{review.name}}</p>
-                  <p>Rating: {{review.rating}}</p>
-                  <p>{{review.review}}</p>
-
-                </li>
-              </ul>
-            </div>
-
-            <product-review @review-submitted="addReview"></product-review>
+            <product-tabs :reviews="reviews"></product-tabs>
+           
             
         </div>
     </div>`,
@@ -103,11 +95,6 @@ Vue.component("product", {
       //Yukari ile iletisim kurmak icin bir event olustururuz.
       this.$emit("add-to-cart", this.variants[this.selectedVariant].variantId); //emit add-to-cart event
     },
-    addReview(productReview) {
-      console.log("add review");
-      this.reviews.push(productReview);
-      console.log(this.reviews);
-    },
     setVariant(index) {
       console.log(index);
 
@@ -128,6 +115,12 @@ Vue.component("product", {
     shipping() {
       return this.premium ? "FREE" : "2.99";
     }
+  },
+  mounted() {
+    //component dom'a mount edildiginde cagrilir.
+    eventBus.$on("review-submitted", productReview => {
+      this.reviews.push(productReview);
+    });
   }
 });
 
@@ -198,7 +191,7 @@ Vue.component("product-review", {
           rating: this.rating,
           recommend: this.recommend
         };
-        this.$emit("review-submitted", productReview);
+        eventBus.$emit("review-submitted", productReview);
       }
       this.name = null;
       this.review = null;
@@ -222,4 +215,45 @@ Vue.component("product-details", {
   template: `<ul>
     <li v-for="detail in details">{{ detail }}</li>
   </ul>`
+});
+
+Vue.component("product-tabs", {
+  props: {
+    reviews: {
+      type: Array,
+      required: true
+    }
+  },
+  template: `
+    <div>
+      <span class="tab"
+        :class="{activeTab: selectedTab === tab}"
+        v-for="(tab,index) in tabs"
+        :key="index"
+        @click="selectedTab = tab">
+        {{tab}}  
+      </span>
+
+      <div v-show="selectedTab === 'Reviews'">
+      <p v-if="!reviews.length">There are no reviews yet.</p>
+      <ul v-else>
+        <li v-for="(review,index) in reviews" :key="index">
+          <p>{{review.name}}</p>
+          <p>Rating: {{review.rating}}</p>
+          <p>{{review.review}}</p>
+        </li>
+      </ul>
+    </div>
+
+    <product-review 
+      v-show="selectedTab === 'Make a Review'">
+    </product-review> 
+    </div>     
+  `,
+  data() {
+    return {
+      tabs: ["Reviews", "Make a Review"],
+      selectedTab: "Reviews"
+    };
+  }
 });
