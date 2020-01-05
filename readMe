@@ -34,3 +34,10 @@ What kind of components should be globally registered?
 
 SVG (Scalable Vector Graphic)
    dosya icindeki id ile cagrilir - <symbol id="activity" 
+
+Slot
+   Global component'lere props ile veri iletiyoruz.
+   Ama action gerektiren durumlarda bir butonun icine ne koyulursa iletmesi gibi,
+   slots kullanilir.
+   Slot icine yazilan deger default deger olur.
+   Bu sayede parents property'e erismis olur.

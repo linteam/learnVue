@@ -3,6 +3,11 @@
     <svg class="icon" :width="width" :height="height">
       <use v-bind="{ 'xlink:href': '/feather-sprite.svg#' + name }"></use>
     </svg>
+    <!-- Named Slot birden fazla slot oldugu durumlarda gereklidir.
+    Bir slot icinde birden fazla eleman gostermek icin cagrildigi yerde elemanlari
+    template icin koyabilirsin
+     -->
+    <slot name="attending"></slot>
   </div>
 </template>
 
