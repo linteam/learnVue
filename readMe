@@ -1,1 +1,18 @@
 --- LEARN VUE JS ---
+
+Vue CLI (Command Line Interface)
+    configures webpack
+
+ npm i -g @vue/cli      komutu ile yuklenir
+ vue create projectName  //proje olusturursun 
+    vue ui      //ile gorsel olarak da seceneklere ulasmak mumkun
+    vue ui ile once olusturdugun proje import edilebilir.
+ npm run serve          //komutu ile calistirirsin
+
+
+ public -> put files you don't want run through webpack
+ src
+
+
+App.vue dosyasi ana component'tir.
+main.js bunu alip render eder ve index.html'deki <div id="app"> icinde goruntuler.
