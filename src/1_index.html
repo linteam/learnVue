@@ -13,59 +13,18 @@
 
     </div>
     <div id="app">
-        <div class="product">
-            <div class="product-image">
-                <!--v-bind dynamically binds an attribute to an expression-->
-                <!-- v-bind: yerine sadece : kullanarak bind edebilirsin -->
-                <!-- :alt="description", :href="url" , :title: -->
-                <a :href="link"><img v-bind:src="image"></a>
-            </div>
-            <div class="product-info">
-                <!-- <h1>{{brand}} {{product}}</h1> -->
-                <h1> {{title}} </h1>
-                <!-- <p v-if="inventory > 10">In Stock</p>
-                <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
-                <p v-else>Out of Stock</p> -->
-                <!--style="display-none"-->
-                <!-- <span v-if="onSale">On Sale</span> -->
-                <p v-show="inStock">In Stock</p>
-                <p v-show="!inStock" :class="{lineThrough: !inStock}">Out of Stock</p>
-
-                <ul>
-                    <li v-for="detail in details">{{detail}}</li>
-                </ul>
-
-                <div v-for="(variant, index) in variants" :key="variant.variantId" class="color-box"
-                :style="{backgroundColor: variant.variantColor}" @mouseover="setVariant(index)">
-                    <!-- :style="{fontSize: fontSize}" dedigimde sagdaki fontSize data'dan gelir -->
-                    <!-- :style="{'font-size': fontSize}" olarak da yazabilirsin -->
-                    <!-- :style="styleObject" data:{styleObject:{color: 'red'}}-->
-                    <!-- :style:"[styleObject1, styleObject2]"-->
-
-                </div>
-                
-                <ul>
-                    <li v-for="size in sizes">{{size}}</li>
-                </ul>
-
-                <!-- <button v-on:click="cart += 1">Add to Cart</button> -->
-                <!-- Class Bindings - Expression'a gore class ekleme ya da cikarma
-                :class="{active: activeClass, 'text-danger': errorClass"}
-                //data tarafinda
-                data: {activeClass: true, errorClass: false}
-                Direkt class objesi de atanabilir, class object array de olabilir
-                -->
-                <button @click="addToCart" 
-                :disabled="!inStock"
-                :class="{ disabledButton: !inStock}">Add to Cart</button>
-                <div class="cart">
-                    <p>Cart({{cart}})</p>
-                </div>
-            </div>
+        <!-- Component isimleri kucuk harflerden olusmali? -->
+        <componentsample message="Hello"></componentsample>
+        <div class="cart">
+            <p>Cart({{cart}})</p>
         </div>
+        <product :premium = "premium"></product>
+        <product></product>
     </div>
     
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./1_components/product.js"></script>
+<script src="./1_components/componentsample.js"></script>
 <script src="./1_assets/main.js"></script>
