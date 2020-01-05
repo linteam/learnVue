@@ -28,3 +28,9 @@ Optimizing Editro - vscode
     Copy Relative Path eklentisini kurduk
 
 Dynamic Routes: /user/gregg or /user/adam
+
+What kind of components should be globally registered?
+   Sik kullanilan componentler, button, input vs
+
+SVG (Scalable Vector Graphic)
+   dosya icindeki id ile cagrilir - <symbol id="activity" 
