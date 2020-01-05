@@ -1,7 +1,7 @@
 <template>
   <router-link
     class="event-link"
-    :to="{ name: 'event-show', params: { id: 1 } }"
+    :to="{ name: 'event-show', params: { id: event.id } }"
   >
     <div class="event-card -shadow">
       <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
@@ -17,20 +17,21 @@
 
 <script>
 export default {
+  props: ['event'],
   //Burasi ile component baska yerde import edilebilir.
   //data: function(){} ES6 shorthand hali asagidaki
   data() {
     return {
-      event: {
-        id: 1,
-        title: 'Cocuk Tiyatrosu',
-        date: 'Tues Aug 19, 2020',
-        time: '6:00',
-        attendees: [
-          { id: 'abs123', name: 'Fikret Cetin' },
-          { id: 'dasd23', name: 'Harun Gormez' }
-        ]
-      }
+      // event: {
+      //   id: 1,
+      //   title: 'Cocuk Tiyatrosu',
+      //   date: 'Tues Aug 19, 2020',
+      //   time: '6:00',
+      //   attendees: [
+      //     { id: 'abs123', name: 'Fikret Cetin' },
+      //     { id: 'dasd23', name: 'Harun Gormez' }
+      //   ]
+      // }
     }
   }
 }

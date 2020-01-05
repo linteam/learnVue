@@ -41,3 +41,25 @@ Slot
    slots kullanilir.
    Slot icine yazilan deger default deger olur.
    Bu sayede parents property'e erismis olur.
+
+Axios
+   GET, PUT, POST and DELETE requests
+   Add authentication to each requests
+   Set timeouts if requests take too long
+   Configure defaults for every request
+   Intercept requests to create middleware
+   Handle errors and cancel requests properly
+   Properly serialize and deserialize requests and responses
+
+API'lar;
+   express, laravel, rails, django gibi framework'ler
+   ya da
+   firebase, parse, graphcool gibi servislerle sunulabilir.
+
+Mock API
+   sudo npm i -g json-server
+   json-server --watch db.json
+   localhost:3000'da api server kaldirir ayaga.
+
+npm outdated   komutu ile eski kalan paketler gorulebilir.
+Bunlar vue ui uzerinden de guncellenebilir.
