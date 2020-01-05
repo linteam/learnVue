@@ -16,3 +16,14 @@ Vue CLI (Command Line Interface)
 
 App.vue dosyasi ana component'tir.
 main.js bunu alip render eder ve index.html'deki <div id="app"> icinde goruntuler.
+
+Optimizing Editro - vscode
+    install vetur plugin for syntax highlighting
+    ctrl + p ile dosyalar arasi gecis yapabilirsin.
+    dosyada vue yazip enter'a basinca iskeleti olusturur otomatik.
+    emmit de var
+    eslint ve prettier eklentilerini de kur
+    eslint config dosyasinda extends kismina "plugin:prettier/recommended" ekle
+    .prettierrc.js dosyasini olusturarak kendi ayarlarinizi girebilirsiniz
+    Copy Relative Path eklentisini kurduk
+

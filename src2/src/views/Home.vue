@@ -7,12 +7,13 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+//src2/src/components/HelloWorld.vue src ve oncesine @ isareti konulabilir.
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
     HelloWorld
   }
-};
+}
 </script>
