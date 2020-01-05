@@ -6,8 +6,7 @@
       <!-- Hem yukaridaki gibi hem asagidaki gibi calisir. 
       Asagidaki gibi cagirdiginda route ismine gore gitmis olur. -->
       <router-link :to="{ name: 'event-list' }">Home</router-link> |
-      <router-link :to="{ name: 'event-show' }">Show Event #1</router-link> |
-      <router-link :to="{ name: 'event-create' }">Create</router-link>
+      <router-link :to="{ name: 'event-create' }">Create</router-link> |
 
       <!-- Yukaridaki gibi yapmanin avantaji ileride degisiklik oldugunda PATH'in tek bir yerden
       router/index.js dosyasindan degistirilmesi yeterli olacak -->

@@ -14,9 +14,10 @@ const routes = [
     component: EventList //component to render
   },
   {
-    path: '/event', //url
+    path: '/event/:id', //url
     name: 'event-show', //name of the route
-    component: EventShow //component to render
+    component: EventShow, //component to render
+    props: true //bu sayede degiskenler props olarak yollanabilir
   },
   {
     path: '/event/create', //url
@@ -37,6 +38,7 @@ const routes = [
   //   path: '/about', //eski path
   //   redirect: { name: 'about' }
   // }
+  // {path:'*', component: NotFoundComponent}
 ]
 
 const router = new VueRouter({

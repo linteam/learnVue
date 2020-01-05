@@ -27,3 +27,4 @@ Optimizing Editro - vscode
     .prettierrc.js dosyasini olusturarak kendi ayarlarinizi girebilirsiniz
     Copy Relative Path eklentisini kurduk
 
+Dynamic Routes: /user/gregg or /user/adam
