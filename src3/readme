@@ -1,0 +1,26 @@
+Vuex: State Management Pattern and Library
+Global bir yer sağlar stateler için.
+
+//Store olusturma
+const store = new Vuex.Store({
+    //Vue'da datanin saklandigi yer data: idi, Vuex state'e sahip
+    state: {
+        ....
+    }
+    //Vue'dan farkli olarak data okuma/yazma oncesi commit + track state changes isi icin
+    //mutations var. Debugging tool ile state'in onceki degerine mutation sayesinde bakilabilir.
+    mutations:{
+
+    }
+
+    //Vue'da datayi isleyen methods vardi, Vuex'de actions var
+    //Actions mutation'lari cagirir, mutation state'i update eder.
+    actions: {
+        
+    }
+    //Vue'da datayi okuyan computed vardi Vuex'de getters var
+    getters: {
+
+    }
+})
+
