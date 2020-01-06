@@ -33,4 +33,8 @@ async function getEvent(id) {
   }
 }
 
-export default { getEvents, getEvent }
+function postEvent(event) {
+  return apiClient.post('/events', event)
+}
+
+export default { getEvents, getEvent, postEvent }

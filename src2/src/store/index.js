@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import EventService from '@/services/EventService'
 Vue.use(Vuex)
 //Global Storage
 export default new Vuex.Store({
@@ -17,13 +17,33 @@ export default new Vuex.Store({
       'food',
       'community'
     ],
-    activities: [
-      { id: 1, title: 'Tiyatro' },
-      { id: 2, title: 'Sinema' }
-    ]
+    events: [],
+    count: 0
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    //can update/mutate Vuex State
+    INCREMENT_COUNT(state, value) {
+      state.count += value
+    },
+    ADD_EVENT(state, event) {
+      state.events.push(event)
+    }
+  },
+  actions: {
+    //Mutations synchronous, Actions are asynchronous
+    //Always put mutations within Actions
+    //Ilk degisken contect object, onu destructring ile aliyoruz.
+    updateCount({ state, commit }, value) {
+      if (state.user) {
+        commit('INCREMENT_COUNT', value)
+      }
+    },
+    createEvent({ commit }, event) {
+      return EventService.postEvent(event).then(() => {
+        commit('ADD_EVENT', event)
+      })
+    }
+  },
   getters: {
     catLength: state => {
       return state.categories.length
@@ -36,8 +56,11 @@ export default new Vuex.Store({
       return state.todos.length - getters.doneTodos.length
       //return state.todos.filter(todo => !todo.done).length
     },
-    getActivityById: state => id => {
-      return state.activities.find(activity => activity.id === id)
+    getEventById: state => id => {
+      return state.events.find(event => event.id === id)
+    },
+    count: state => {
+      return state.count
     }
   },
   modules: {}
