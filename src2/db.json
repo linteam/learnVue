@@ -231,6 +231,24 @@
       "date": "",
       "time": "5:00",
       "attendees": []
+    },
+    {
+      "id": 3055704,
+      "user": {
+        "id": "abd123",
+        "name": "Hakan"
+      },
+      "category": "housing",
+      "organizer": {
+        "id": "abd123",
+        "name": "Hakan"
+      },
+      "title": "dfg",
+      "description": "dfgdg",
+      "location": "dfgd",
+      "date": "2020-01-02T10:51:00.000Z",
+      "time": "19:00",
+      "attendees": []
     }
   ]
 }

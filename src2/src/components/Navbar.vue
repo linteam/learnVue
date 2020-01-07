@@ -1,16 +1,15 @@
 <template>
   <div id="nav" class="nav">
-    <router-link to="/" class="brand">My App</router-link>
+    <router-link to="/" class="brand">BILGEM</router-link>
     <nav>
       <!-- Link Component to navigate to a route -->
       <!-- <router-link to="/">Home</router-link> -->
       <!-- Hem yukaridaki gibi hem asagidaki gibi calisir. 
-      Asagidaki gibi cagirdiginda route ismine gore gitmis olur. -->
-      <router-link :to="{ name: 'event-list' }">Home</router-link> |
-      <router-link :to="{ name: 'event-create' }">Create</router-link> |
-
+      Asagidaki gibi cagirdiginda route ismine gore gitmis olur.-->
+      <router-link :to="{ name: 'event-list' }">Home</router-link>|
+      <router-link :to="{ name: 'event-create' }">Create</router-link>|
       <!-- Yukaridaki gibi yapmanin avantaji ileride degisiklik oldugunda PATH'in tek bir yerden
-      router/index.js dosyasindan degistirilmesi yeterli olacak -->
+      router/index.js dosyasindan degistirilmesi yeterli olacak-->
       <router-link to="/about">About</router-link>
     </nav>
   </div>
