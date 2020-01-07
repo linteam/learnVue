@@ -33,7 +33,7 @@ export const mutations = {
   }
 }
 export const actions = {
-  createEvent({ commit, rootState }, event) {
+  createEvent({ commit, rootState, dispatch }, event) {
     //Diger bir konu bir modul digerinin state'ine nasil erisir?
     //Yukari commit yanina state ekleyip asagidaki gibi cagirmak ise yaramaz cunku bu local state
     //console.log('User creating Event is: ' + state.user.user.name)
@@ -45,21 +45,39 @@ export const actions = {
     //Yukari dispatch ekleyip; dispatch('actionInUser',null,{root:true}) seklinde cagirmak ise yarar cunku
     //Actions, Mutations ve Getters her zaman global namespace'de register edilirler...
 
-    return EventService.postEvent(event).then(() => {
-      commit('ADD_EVENT', event)
-    })
+    return EventService.postEvent(event)
+      .then(() => {
+        commit('ADD_EVENT', event)
+        const notification = {
+          type: 'success',
+          message: rootState.user.user.name + "'s event has been created"
+        }
+        dispatch('notification/add', notification, { root: true })
+      })
+      .catch(error => {
+        const notification = {
+          type: 'error',
+          message: 'There was a problem creating event: ' + error.message
+        }
+        dispatch('notification/add', notification, { root: true })
+        throw error
+      })
   },
-  fetchEvents({ commit }, { perPage, page }) {
+  fetchEvents({ commit, dispatch }, { perPage, page }) {
     EventService.getEvents(perPage, page)
       .then(response => {
         commit('SET_EVENTS_TOTAL', parseInt(response.headers['x-total-count']))
         commit('SET_EVENTS', response.data)
       })
       .catch(error => {
-        console.log('There was an error:', error.response)
+        const notification = {
+          type: 'error',
+          message: 'There was a problem fetching events: ' + error.message
+        }
+        dispatch('notification/add', notification, { root: true })
       })
   },
-  fetchEvent({ commit, getters }, id) {
+  fetchEvent({ commit, getters, dispatch }, id) {
     //Eger daha once cekilmisse ordan aliyoruz.
     var event = getters.getEventById(id)
 
@@ -71,7 +89,11 @@ export const actions = {
           commit('SET_EVENT', response.data)
         })
         .catch(error => {
-          console.log('There was an error:', error.response)
+          const notification = {
+            type: 'error',
+            message: 'There was a problem fetching event: ' + error.message
+          }
+          dispatch('notification/add', notification, { root: true })
         })
     }
   }

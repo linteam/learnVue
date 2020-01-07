@@ -1,14 +1,16 @@
 <template>
   <div id="app">
     <Navbar />
+    <NotificationContainer />
     <!-- $route.fullPath (P buyuk) -- > reload components when the URL changes, including query parameters -->
     <router-view :key="$route.fullPath" />
   </div>
 </template>
 <script>
 import Navbar from '@/components/Navbar.vue'
+import NotificationContainer from '@/components/NotificationContainer.vue'
 export default {
-  components: { Navbar }
+  components: { Navbar, NotificationContainer }
 }
 </script>
 //Global style buraya tanimlanabilir
