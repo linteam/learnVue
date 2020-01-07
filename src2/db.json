@@ -73,245 +73,163 @@
       ]
     },
     {
-      "category": "education",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "Vue Semineri",
-      "description": "vue'nun faydaları",
-      "location": "istanbul",
-      "date": "2020-01-15T20:24:00.000Z",
-      "time": "18:00",
-      "attendees": [],
-      "id": 4
+      "id": 4,
+      "title": "Disco Party",
+      "date": "Aug 28 2018",
+      "time": "10:00",
+      "location": "Daytona Beach",
+      "description": "Let's clean up this beach.",
+      "organizer": "Adam Jahr",
+      "category": "sustainability",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "def456",
+          "name": "Gregg Pollack"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
     },
     {
+      "id": 5,
+      "title": "Vue Users Group",
+      "date": "Nov 12 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "We're going to clean up this park.",
+      "organizer": "Adam Jahr",
+      "category": "nature",
+      "attendees": [
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Orlando Dev Meetup",
+      "date": "Dec 2 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "Help animals find new homes.",
+      "organizer": "Gregg Pollack",
+      "category": "animal welfare",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Yoga Class",
+      "date": "Aug 28 2018",
+      "time": "10:00",
+      "location": "Daytona Beach",
+      "description": "Let's clean up this beach.",
+      "organizer": "Adam Jahr",
+      "category": "sustainability",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "def456",
+          "name": "Gregg Pollack"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Breathing Meditation",
+      "date": "Nov 12 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "We're going to clean up this park.",
+      "organizer": "Adam Jahr",
+      "category": "nature",
+      "attendees": [
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Dancing Class",
+      "date": "Dec 2 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "Help animals find new homes.",
+      "organizer": "Gregg Pollack",
+      "category": "animal welfare",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 10,
       "category": "animal welfare",
       "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
+        "user": {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        }
       },
-      "title": "harika eglence",
-      "description": "nedir",
-      "location": "ankara",
-      "date": "2020-01-07T20:33:00.000Z",
-      "time": "18:00",
-      "attendees": [],
-      "id": 5
-    },
-    {
-      "category": "food",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "hamburger yeme yarismasi",
-      "description": "cocuklar icin",
-      "location": "izmir",
-      "date": "2020-01-10T20:36:00.000Z",
-      "time": "19:00",
-      "attendees": [],
-      "id": 6
-    },
-    {
-      "category": "animal welfare",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "hakan",
-      "description": "deneme",
-      "location": "neresi",
-      "date": "2020-01-08T20:41:00.000Z",
-      "time": "17:00",
-      "attendees": [],
-      "id": 7
-    },
-    {
-      "category": "animal welfare",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "kol",
-      "description": "adas",
-      "location": "asdad",
-      "date": "2020-01-01T20:46:00.000Z",
-      "time": "13:00",
-      "attendees": [],
-      "id": 8
-    },
-    {
-      "category": "education",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "adasd",
-      "description": "asdasd",
-      "location": "asdasd",
+      "title": "Gregg's Event",
+      "description": "We'll do stuff",
+      "location": "Your House",
       "date": "",
-      "time": "",
-      "attendees": [],
-      "id": 9
-    },
-    {
-      "category": "education",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "adasd",
-      "description": "asdasd",
-      "location": "asdasd",
-      "date": "2020-01-07T20:50:00.000Z",
-      "time": "17:00",
-      "attendees": [],
-      "id": 10
-    },
-    {
-      "category": "education",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "adasdkkk",
-      "description": "asdasd",
-      "location": "asdasd",
-      "date": "2020-01-07T20:50:00.000Z",
-      "time": "17:00",
-      "attendees": [],
-      "id": 11
-    },
-    {
-      "category": "animal welfare",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "sdfsf",
-      "description": "dfsfsfd",
-      "location": "sdfsdf",
-      "date": "2019-12-31T21:05:00.000Z",
-      "time": "13:00",
-      "attendees": [],
-      "id": 12
-    },
-    {
-      "category": "animal welfare",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "deneme99",
-      "description": "asdads",
-      "location": "naber",
-      "date": "2019-12-31T21:08:00.000Z",
-      "time": "15:00",
-      "attendees": [],
-      "id": 13
-    },
-    {
-      "category": "housing",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "koraman1",
-      "description": "adads",
-      "location": "dasda",
-      "date": "2020-01-01T21:11:00.000Z",
-      "time": "16:00",
-      "attendees": [],
-      "id": 14
-    },
-    {
-      "category": "animal welfare",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "koa",
-      "description": "asdadsa",
-      "location": "adasdads",
-      "date": "2020-01-01T21:16:00.000Z",
-      "time": "15:00",
-      "attendees": [],
-      "id": 15
-    },
-    {
-      "category": "animal welfare",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "dsdf43534",
-      "description": "dfsdfsdf",
-      "location": "sdfsdf",
-      "date": "2020-01-09T21:20:00.000Z",
-      "time": "15:00",
-      "attendees": [],
-      "id": 16
-    },
-    {
-      "category": "animal welfare",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "sdfsdf5456",
-      "description": "dsfdsfds",
-      "location": "dfsdfsdf",
-      "date": "2020-01-01T21:21:00.000Z",
-      "time": "16:00",
-      "attendees": [],
-      "id": 17
-    },
-    {
-      "category": "housing",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "meryem",
-      "description": "celik",
-      "location": "dfsdf",
-      "date": "2020-01-08T21:23:00.000Z",
-      "time": "16:00",
-      "attendees": [],
-      "id": 18
-    },
-    {
-      "category": "animal welfare",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "koray",
-      "description": "fsdf",
-      "location": "dfsdf",
-      "date": "2020-01-08T21:25:00.000Z",
-      "time": "15:00",
-      "attendees": [],
-      "id": 19
-    },
-    {
-      "id": 9706121,
-      "user": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "category": "animal welfare",
-      "organizer": {
-        "id": "abd123",
-        "name": "Hakan Pekdemir"
-      },
-      "title": "kolsuz",
-      "description": "terzi",
-      "location": "korku",
-      "date": "2020-01-01T21:27:00.000Z",
-      "time": "13:00",
+      "time": "5:00",
       "attendees": []
     }
   ]

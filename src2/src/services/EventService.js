@@ -11,30 +11,14 @@ const apiClient = axios.create({
   }
 })
 
-async function getEvents() {
-  try {
-    //const res = await axios.get('http://localhost:3000/events')
-    const res = await apiClient.get('/events')
-    return res.data
-  } catch (error) {
-    console.log(error)
-    return []
+export default {
+  getEvents(perPage, page) {
+    return apiClient.get('/events?_limit=' + perPage + '&_page=' + page)
+  },
+  getEvent(id) {
+    return apiClient.get('/events/' + id)
+  },
+  postEvent(event) {
+    return apiClient.post('/events', event)
   }
 }
-
-async function getEvent(id) {
-  try {
-    const res = await apiClient.get(`/events/${id}`)
-    console.log(res.data)
-    return res.data
-  } catch (error) {
-    console.log(error)
-    return {}
-  }
-}
-
-function postEvent(event) {
-  return apiClient.post('/events', event)
-}
-
-export default { getEvents, getEvent, postEvent }

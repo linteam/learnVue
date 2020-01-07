@@ -105,27 +105,19 @@ export default {
     }
   },
   methods: {
-    async createEvent() {
-      try {
-        await this.$store.dispatch('createEvent', this.event)
-        console.log('event', this.event)
-
-        this.$router.push({
-          name: 'event-show',
-          params: { id: this.event.id }
+    createEvent() {
+      this.$store
+        .dispatch('event/createEvent', this.event)
+        .then(() => {
+          this.$router.push({
+            name: 'event-show',
+            params: { id: this.event.id }
+          })
+          this.event = this.createFreshEventObject()
         })
-        this.event = this.createFreshEventObject()
-      } catch (error) {
-        console.log('Hata: ', error)
-      }
-      // .then(() => {
-
-      //   console.log('Basarili', this.event.id)
-      //   this.event = this.createFreshEventObject()
-      // })
-      // .catch(() => {
-      //   console.log('There was a problem creating your event.')
-      // })
+        .catch(() => {
+          console.log('There was a problem creating your event')
+        })
     },
     incrementCount() {
       //this.$store.commit('INCREMENT_COUNT', this.incrementBy)
