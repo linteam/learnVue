@@ -63,3 +63,25 @@ Mock API
 
 npm outdated   komutu ile eski kalan paketler gorulebilir.
 Bunlar vue ui uzerinden de guncellenebilir.
+
+ProgressBar icin farkli cozumler var
+Sirasiyla asagidaki cozumleri uygulayacagiz:
+
+1- Axios Interceptors
+   Bunun icin NProgress paketini yukluyoruz.
+   2 cozulmesi gereken sorun var:
+   a- Bu cozum multiple axios call'ler için uygun değil. İlk call ile start edip
+son call ile done etmek için loading vuex modul yazılabilir. Bu modulde apiWaitingCount
+ile bekleyen yoksa done edilir.
+   b- Template once geliyor, call return sonrası veriler de geliyor.
+
+   Interceptors kullanmak için diğer sebepler:
+   - On request to set authorization tokens
+   - On response to format or filter data before it reaches into your app
+   - On response to catch 401 not auhtorized responses
+      token yenilemek ya da login'e yonlendirmek olabilir.
+
+2- In-Component Route Guards
+3- Global and Per-Route Guards
+
+Sonuc olarak 3. secenegi kullanacağız
