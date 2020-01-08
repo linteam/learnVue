@@ -14,7 +14,11 @@
     <p>{{ event.description }}</p>
     <h2>
       Attendees
-      <span class="badge -fill-gradient">{{ event.attendees ? event.attendees.length : 0 }}</span>
+      <span class="badge -fill-gradient">
+        {{
+        event.attendees ? event.attendees.length : 0
+        }}
+      </span>
     </h2>
     <ul class="list-group">
       <li v-for="(attendee, index) in event.attendees" :key="index" class="list-item">
@@ -25,27 +29,52 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import NProgress from 'nprogress'
-import store from '@/store'
+//import { mapState } from 'vuex'
+//import NProgress from 'nprogress'
+//import store from '@/store'
 export default {
-  props: ['id'],
-  beforeRouteEnter(routeTo, routeFrom, next) {
-    NProgress.start()
-    //this'e erisimimiz yok this.fetchevent diyemeyiz.
-    //bunun icin yukari store'u import ediyoruz.
-    store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
-      NProgress.done()
-      next()
-    })
+  props: {
+    //Vuex'i burdan kaldirdim event'i routes'dan prop ile verdim.
+    event: { type: Object, required: true }
   },
+
+  //Start islemini router'a almak 2. yontem
+  // beforeRouteEnter(routeTo, routeFrom, next) {
+  //   // called before the route that renders this component is confirmed.
+  //   // does NOT have access to `this` component instance,
+  //   // because it has not been created yet when this guard is called!
+  //   // windows.confirm() ile ayrilmak istediginize emin misiniz sorusu sorulabilir.
+  //   // cevaba gore next() ya da next(false) denebilir.
+
+  //   //Start islemini beforeEach isine tasimak ilk yontem
+  //   //NProgress.start()
+  //   //this'e erisimimiz yok this.fetchevent diyemeyiz.
+  //   //bunun icin yukari store'u import ediyoruz.
+  //   store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
+  //     //NProgress.done()
+  //     next()
+  //   })
+  // },
+  // beforeRouteUpdate(routeTo, routeFrom, next) {
+  //   // called when the route that renders this component has changed,
+  //   // but this component is reused in the new route.
+  //   // For example, for a route with dynamic params `/foo/:id`, when we
+  //   // navigate between `/foo/1` and `/foo/2`, the same `Foo` component instance
+  //   // will be reused, and this hook will be called when that happens.
+  //   // has access to `this` component instance.
+  // },
+  // beforeRouteLeave(routeTo, routeFrom, next) {
+  //   // called when the route that renders this component is about to
+  //   // be navigated away from.
+  //   // has access to `this` component instance.
+  // },
   created() {
     //this.$store.dispatc('event/fetchEvent',this.id)
     //this.fetchEvent(this.id) buna ihtiyac yok burda
   },
-  computed: mapState({
-    event: state => state.event.event
-  }),
+  // computed: mapState({
+  //   event: state => state.event.event
+  // }),
   methods: {
     //...mapActions(['event/fetchEvent'])
     //event namespace,fetchEvent action to map

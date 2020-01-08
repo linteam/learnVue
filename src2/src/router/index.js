@@ -4,9 +4,9 @@ import VueRouter from 'vue-router' //vue routier library cagrilir
 import EventCreate from '../views/EventCreate.vue'
 import EventList from '../views/EventList.vue'
 import EventShow from '../views/EventShow.vue'
-
+import NProgress from 'nprogress'
 Vue.use(VueRouter) //Use the router
-
+import store from '@/store'
 const routes = [
   {
     path: '/', //url
@@ -17,7 +17,14 @@ const routes = [
     path: '/event/:id', //url
     name: 'event-show', //name of the route
     component: EventShow, //component to render
-    props: true //bu sayede degiskenler props olarak yollanabilir
+    props: true, //bu sayede degiskenler props olarak yollanabilir
+    beforeEnter(to, from, next) {
+      store.dispatch('event/fetchEvent', to.params.id).then(event => {
+        //NProgress.done()
+        to.params.event = event //yukarida props true dememiz onemli
+        next()
+      })
+    }
   },
   {
     path: '/event/create', //url
@@ -46,5 +53,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  NProgress.start()
+  next()
+})
+router.afterEach(() => {
+  NProgress.done()
+})
 export default router

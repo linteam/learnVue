@@ -69,6 +69,7 @@ Sirasiyla asagidaki cozumleri uygulayacagiz:
 
 Bunun icin NProgress paketini yukluyoruz.
 main.js'e ngprogress.css'i yukluyoruz.
+Sonuc olarak 3. secenegi kullanacağız
 
 1- Axios Interceptors
    2 cozulmesi gereken sorun var:
@@ -89,14 +90,8 @@ ile bekleyen yoksa done edilir.
 
    Vue Router kullandigimizda Route Navigation Guards denen 3 adet daha hooks elde ediyoruz.
    - beforeRouteEnter(routeTo, routeFrom, next)
-      route'a gitmemis.
-      windows.confirm() ile ayrilmak istediginize emin misiniz sorusu sorulabilir.
-      cevaba gore next() ya da next(false) denebilir.
-      Called before component is created, doesn't have access to this
    - beforeRouteUpdate(routeTo, routeFrom, next)
-      Called when the route changes, but still using the same component. Has access to this
    - beforeRouteLeave(routeTo, routeFrom, next)
-      Called when this component is navigated away from. Has access to this
    next -> the function that must be called to resolve the hook
       all must call next()
       next(false) will cancel the navigations
@@ -109,5 +104,12 @@ ile bekleyen yoksa done edilir.
    d- render the component Template
 
 3- Global and Per-Route Guards
+   router.beforeEach((to,from,next) => {
+      //beforeRouteEnter(to,from,next) cagrilir sonra afterEach cagrilir.
+      next()
+   })
+   router.afterEach((to,from,next) => {
+     //bundan sonra beforeCreate(), created() cagrilir
+   })
 
-Sonuc olarak 3. secenegi kullanacağız
+
