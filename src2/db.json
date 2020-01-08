@@ -285,6 +285,24 @@
       "date": "2020-01-02T12:54:00.000Z",
       "time": "2:00",
       "attendees": []
+    },
+    {
+      "id": 1627944,
+      "user": {
+        "id": "abd123",
+        "name": "Hakan"
+      },
+      "category": "animal welfare",
+      "organizer": {
+        "id": "abd123",
+        "name": "Hakan"
+      },
+      "title": "kedi",
+      "description": "yarismasi",
+      "location": "konya",
+      "date": "2020-01-01T18:52:00.000Z",
+      "time": "18:00",
+      "attendees": []
     }
   ]
 }

@@ -48,6 +48,7 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import Datepicker from 'vuejs-datepicker'
+import NProgress from 'nprogress'
 //import EventService from '@/services/EventService'
 export default {
   //computed: mapState(['user', 'categories']) //VERSION 4
@@ -94,6 +95,7 @@ export default {
   },
   methods: {
     createEvent() {
+      NProgress.start()
       this.$store
         .dispatch('event/createEvent', this.event)
         .then(() => {
@@ -103,7 +105,9 @@ export default {
           })
           this.event = this.createFreshEventObject()
         })
-        .catch(() => {})
+        .catch(() => {
+          NProgress.done()
+        })
     },
     incrementCount() {
       //this.$store.commit('INCREMENT_COUNT', this.incrementBy)

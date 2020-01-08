@@ -11,7 +11,8 @@ const routes = [
   {
     path: '/', //url
     name: 'event-list', //name of the route
-    component: EventList //component to render
+    component: EventList, //component to render
+    props: true
   },
   {
     path: '/event/:id', //url
