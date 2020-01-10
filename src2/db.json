@@ -303,6 +303,24 @@
       "date": "2020-01-01T18:52:00.000Z",
       "time": "18:00",
       "attendees": []
+    },
+    {
+      "id": 3835442,
+      "user": {
+        "id": "abd123",
+        "name": "Hakan"
+      },
+      "category": "animal welfare",
+      "organizer": {
+        "id": "abd123",
+        "name": "Hakan"
+      },
+      "title": "dsfsdf",
+      "description": "sdfsdf",
+      "location": "sdfsdf",
+      "date": "2020-01-08T17:30:00.000Z",
+      "time": "1:00",
+      "attendees": []
     }
   ]
 }

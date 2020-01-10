@@ -9,6 +9,9 @@
 
 <script>
 export default {
+  /*Class ve style attribute'lari icin props kullanilir.
+    inheritAttrs: false bunlar icin ise yaramaz
+    Vue3 ile degisebilir.*/
   inheritAttrs: false,
   props: {
     options: {
