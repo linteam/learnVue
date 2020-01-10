@@ -7,8 +7,10 @@ import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 import 'nprogress/nprogress.css' //include nprogress css
 import Vuelidate from 'vuelidate'
+import DateFilter from './filters/date'
 
 Vue.use(Vuelidate) //Global olarak ulasilmasi icin
+Vue.filter('date', DateFilter)
 Vue.config.productionTip = false
 const requireComponent = require.context(
   './components', //Components dosyasi icinde ara

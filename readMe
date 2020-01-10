@@ -121,3 +121,19 @@ Mixinin datasini, metodunu import edildigi component datasi override eder.
 
 main.js dosyasinda Vue.mixin({ mounted() {console.log('I am mixed into every component')}})
 gibi global mixin tanimlayabiliriz. Bu sebeple bunu kullanirken dikkatli olmaliyiz.
+-------------------
+FILTERS
+Datayi uygun formata getirmek gerektiginde
+data(){ return { comment: 'no one cares'}},
+filters: {shout(value){return value.toUpperCase()}
+   exclaim(value){...}
+   reply(value,name){...ikinci parametre ile deger alabilir filter fonksiyonu}
+}
+
+<p>{{ comment | shout | reply(bro)}}</p> comment verisine shout ve sonra reply filtresini uygular.
+Yani cagrilma sirasi onemlidir.
+
+Filter ne zaman kullanilmalidir?
+Cogu zaman metod ya da computed property en iyi secenek.
+Ilerde JS'de pipe ozelliginin farkli kullanim ihtimaline binaen uzak dur :))
+
