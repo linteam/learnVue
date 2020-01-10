@@ -1,8 +1,20 @@
 <template>
   <div>
     <label v-if="label">{{ label }}</label>
-    <select :value="value" @input="updateValue" v-bind="$attrs">
-      <option v-for="option in options" :key="option" :selected="option === value">{{ option }}</option>
+    <!-- v-on="$listeners sayesinde cagrildigi yere eklenen event'leri alabilecek. -->
+    <select
+      :value="value"
+      @change="updateValue"
+      v-bind="$attrs"
+      v-on="$listeners"
+    >
+      <option
+        v-for="option in options"
+        :value="option"
+        :key="option.id"
+        :selected="option === value"
+        >{{ option }}</option
+      >
     </select>
   </div>
 </template>
