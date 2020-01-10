@@ -78,7 +78,7 @@ export const actions = {
         dispatch('notification/add', notification, { root: true })
       })
   },
-  fetchEvent({ commit, getters, dispatch }, id) {
+  fetchEvent({ commit, getters }, id) {
     //Eger daha once cekilmisse ordan aliyoruz.
     var event = getters.getEventById(id)
 
@@ -86,18 +86,18 @@ export const actions = {
       commit('SET_EVENT', event)
       return event //route'da alip prop olarak gondermek icin
     } else {
-      return EventService.getEvent(id)
-        .then(response => {
-          commit('SET_EVENT', response.data)
-          return response.data //route'da alip prop olarak gondermek icin
-        })
-        .catch(error => {
-          const notification = {
-            type: 'error',
-            message: 'There was a problem fetching event: ' + error.message
-          }
-          dispatch('notification/add', notification, { root: true })
-        })
+      return EventService.getEvent(id).then(response => {
+        commit('SET_EVENT', response.data)
+        return response.data //route'da alip prop olarak gondermek icin
+      })
+      //Bunu router'a alip 404 sayfasina yonlendiriyorum.
+      // .catch(error => {
+      //   const notification = {
+      //     type: 'error',
+      //     message: 'There was a problem fetching event: ' + error.message
+      //   }
+      //   dispatch('notification/add', notification, { root: true })
+      // })
     }
   }
 }
