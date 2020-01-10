@@ -17,16 +17,23 @@
       <option v-for="cat in categories" :key="cat">{{ cat }}</option>
     </select>
     <h3>Name & describe your event</h3>
-    <div class="field">
-      <label>Title</label>
-      <!-- eslint-disable-next-line prettier/prettier -->
-      <input v-model="event.title" type="text" placeholder="Add an event title" />
-    </div>
-    <div class="field">
-      <label>Description</label>
-      <!-- eslint-disable-next-line prettier/prettier -->
-      <input v-model="event.description" type="text" placeholder="Add a description" />
-    </div>
+    <!-- v-model input event'ini dinler
+    ve payload'u event.title'a atar.
+    -->
+    <BaseInput
+      label="Title"
+      v-model="event.title"
+      type="text"
+      placeholder="Add a title"
+      class="field"
+    />
+    <BaseInput
+      label="Description"
+      v-model="event.description"
+      type="text"
+      placeholder="Add a description"
+      class="field"
+    />
     <h3>Where is your event?</h3>
     <div class="field">
       <label>Location</label>
