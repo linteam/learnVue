@@ -6,6 +6,7 @@ import EventList from '@/views/EventList.vue'
 import EventShow from '@/views/EventShow.vue'
 import NetworkIssue from '@/views/NetworkIssue.vue'
 import NProgress from 'nprogress'
+import Example from '@/views/Example.vue'
 Vue.use(VueRouter) //Use the router
 import store from '@/store'
 import NotFound from '@/views/NotFound.vue'
@@ -64,6 +65,7 @@ const routes = [
     component: NotFound,
     props: true
   },
+  { path: '/example', name: 'example', component: Example },
   { path: '/network-issue', name: 'network-issue', component: NetworkIssue },
   {
     path: '*',

@@ -6,7 +6,10 @@ import store from './store'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
 import 'nprogress/nprogress.css' //include nprogress css
+import Vuelidate from 'vuelidate'
 
+Vue.use(Vuelidate) //Global olarak ulasilmasi icin
+Vue.config.productionTip = false
 const requireComponent = require.context(
   './components', //Components dosyasi icinde ara
   false, //sub directory'leri arama
@@ -22,8 +25,6 @@ requireComponent.keys().forEach(fileName => {
   //
   Vue.component(componentName, componentConfig.default || componentConfig)
 })
-
-Vue.config.productionTip = false
 
 new Vue({
   router, //use router
