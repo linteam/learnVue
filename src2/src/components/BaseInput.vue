@@ -12,28 +12,17 @@
 </template>
 
 <script>
+import { formFieldMixin } from '@/mixins/formFieldMixin.js'
 export default {
-  inheritAttrs: false,
-  props: {
-    label: {
-      type: String,
-      default: ''
-    },
-    value: [String, Number]
-  },
   //@input="updateValue" calismiyor cunku v-on="$listeners" icinde ustten gelen input event'i onu override ediyor
   //cozum olarak;
+  mixins: [formFieldMixin],
   computed: {
     listeners() {
       return {
         ...this.$listeners,
         input: this.updateValue
       }
-    }
-  },
-  methods: {
-    updateValue(event) {
-      this.$emit('input', event.target.value)
     }
   }
 }

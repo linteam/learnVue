@@ -177,7 +177,7 @@ export default {
   },
   methods: {
     createEvent() {
-      this.$v.$touch()
+      this.$v.$touch() //tum alanlarin dirty oldugundan emin oluyor.
       if (!this.$v.$invalid) {
         NProgress.start()
         this.$store

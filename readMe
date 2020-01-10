@@ -112,4 +112,12 @@ ile bekleyen yoksa done edilir.
      //bundan sonra beforeCreate(), created() cagrilir
    })
 
+-------------------------
+MIXINS
+A useful way to encapsulate a small piece of reusable functionality
+Mixin code runs before the component code
+   Mixin import edildiginde created kodu calisir.
+Mixinin datasini, metodunu import edildigi component datasi override eder.
 
+main.js dosyasinda Vue.mixin({ mounted() {console.log('I am mixed into every component')}})
+gibi global mixin tanimlayabiliriz. Bu sebeple bunu kullanirken dikkatli olmaliyiz.

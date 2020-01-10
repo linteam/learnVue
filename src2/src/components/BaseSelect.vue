@@ -20,22 +20,13 @@
 </template>
 
 <script>
+import { formFieldMixin } from '@/mixins/formFieldMixin.js'
 export default {
-  /*Class ve style attribute'lari icin props kullanilir.
-    inheritAttrs: false bunlar icin ise yaramaz
-    Vue3 ile degisebilir.*/
-  inheritAttrs: false,
+  mixins: [formFieldMixin],
   props: {
     options: {
       type: Array,
       required: true
-    },
-    value: [String, Number],
-    label: String
-  },
-  methods: {
-    updateValue(event) {
-      this.$emit('input', event.target.value)
     }
   }
 }
